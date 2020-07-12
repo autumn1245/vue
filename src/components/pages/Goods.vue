@@ -72,11 +72,11 @@
                 .then(response=>{
                    
                     if(response.data.code== 200 && response.data.message){
-                        this.goodsInfo= response.data.message
+                         console.log(222, response.data.message)
+                        this.goodsInfo= response.data.message[0]
                     }else{
                         Toast('服务器错误，数据获取失败')
                     }
-                     console.log(this.goodsInfo)
                 })
                 .catch(error=>{
                     console.log(error)
@@ -106,9 +106,7 @@
                 }else{
                     Toast.success('已有此商品')
                 }
-
                 this.$router.push({name:'Cart'})
-
             }
         
         },

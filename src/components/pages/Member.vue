@@ -4,11 +4,11 @@
             <van-nav-bar  title="会员中心" />
         </div>
         <div class="top">
-           <img src="http://7xjyw1.com1.z0.glb.clouddn.com/touxiang001.jpg" class="top-img" />
+           <img src="../../assets/images/login.png" class="top-img" />
         </div>
         <div class="login">
-            <div><van-button type="warning">我要登录</van-button></div>
-            <div><van-button type="primary">我要注册</van-button></div>
+            <div><van-button type="warning" @click="toLogin">注册</van-button></div>
+            <div><van-button type="primary" @click="toRegister">登录</van-button></div>
         </div>
         <div>
             <van-cell-group>
@@ -26,21 +26,29 @@
 
 <script>
     export default {
-        
+        methods:{
+            toLogin(){
+                this.$router.push({name:'Register'})
+            },
+            toRegister(){
+               this.$router.push({name:'Login'})
+            }
+        }
     }
 </script>
 
 <style scoped>
     .top-img{
-        width:70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
+        margin-top: -90px;
         border-radius: 50px;
     }
     .top{
-        height:5rem;
+        height:1rem;
         text-align: center;
         padding-top:2rem;
-        background-color: #EEA2AD;
+        background-color: #b1a6a8;
     }
     .login{
         display: flex;

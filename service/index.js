@@ -8,6 +8,7 @@ const Router = require("koa-router");
 app.use(bodyParser());
 app.use(cors());
 //引入模块
+
 let user = require("./appApi/user.js");
 let home = require("./appApi/home.js");
 let goods = require("./appApi/goods.js");
@@ -22,15 +23,15 @@ router.use("/goods", goods.routes());
 //加载路由中间件
 app.use(router.routes());
 app.use(router.allowedMethods());
-(async () => {
-  await connect();
-  initSchemas();
+(async() => {
+    await connect();
+    initSchemas();
 })();
 
-app.use(async ctx => {
-  ctx.body = "<h1>Hello Koa2</h1>";
-});
+// app.use(async ctx => {
+//     ctx.body = "<h1>Hello Koa2</h1>";
+// });
 
 app.listen(3009, () => {
-  console.log("[Server] starting at port 3000");
+    console.log("[Server] starting at port 3009");
 });
