@@ -52,10 +52,12 @@
                this.$router.go(-1)
            },
             registerAction(){
-                this.checkForm() && this.axiosRegisterUser()
+                this.checkForm() 
+                this.axiosRegisterUser()
             },
 
            axiosRegisterUser(){
+               console.log(55123456)
                this.openLoading=true;
                axios({
                    url:url.registerUser,
@@ -99,7 +101,6 @@
               }else{
                   this.passwordErrorMsg = ''
               }
-
               return isOk
            } 
 

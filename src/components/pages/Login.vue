@@ -72,8 +72,6 @@
                    }
                })
                .then(response=>{
-                   
-
                  console.log(response) 
                 if(response.data.code==200 && response.data.message){
                     new Promise((resolve,reject)=>{
@@ -86,8 +84,6 @@
                        Toast.fail('登录状态保存失败')
                        console.log(err)
                    })
-                   
-                    
                 }else{
                     Toast.fail('登录失败')
                     this.openLoading = false;
@@ -113,7 +109,6 @@
               }else{
                   this.passwordErrorMsg = ''
               }
-
               return isOk
            } 
 

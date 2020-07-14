@@ -108,7 +108,8 @@ export default {
   components: { swiper, swiperSlide, floorComponent, goodsInfo },
   created() {
     axios({
-      url: url.getShopingMallInfo,
+       url: url.getShopingMallInfo,
+      //url:url.insertAllGoodsInfo,
       method: "get"
     })
       .then(response => {
